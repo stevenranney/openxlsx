@@ -1432,7 +1432,8 @@ Workbook$methods(setColWidths = function(sheet){
   }
   
   ## Calculate width of auto
-  colNodes <- sprintf('<col min="%s" max="%s" width="%s" bestFit="1" customWidth="1"/>', cols, cols, widths)
+#  colNodes <- sprintf('<col min="%s" max="%s" width="%s" bestFit="1" customWidth="1"/>', cols, cols, widths)
+  colNodes <- sprintf('<col min="%s" max="%s" bestFit="1" customWidth="1"/>', cols, cols)
   
   ## Append new col widths XML to worksheets[[sheet]]$cols
   worksheets[[sheet]]$cols <<- append(worksheets[[sheet]]$cols, colNodes)
