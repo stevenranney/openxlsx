@@ -1324,7 +1324,7 @@ Workbook$methods(setColWidths = function(sheet){
         baseFontSize <- ifelse(baseFontSize < 8, 8, ifelse(baseFontSize > 36, 36, baseFontSize))
       }
       
-      baseFontCharWidth <- openxlsxFontSizeLookupTable[[baseFontName]][baseFontSize - 8]
+      baseFontCharWidth <- openxlsxFontSizeLookupTable[[baseFontName]][baseFontSize8]
       allCharWidths <- rep(baseFontCharWidth, length(sheetData[[sheet]]))
       #########----------------------------------------------------------------
       
