@@ -1324,7 +1324,7 @@ Workbook$methods(setColWidths = function(sheet){
         baseFontSize <- ifelse(baseFontSize < 8, 8, ifelse(baseFontSize > 36, 36, baseFontSize))
       }
       
-      baseFontCharWidth <- openxlsxFontSizeLookupTable[[baseFontName]][baseFontSize]
+      baseFontCharWidth <- openxlsxFontSizeLookupTable[[baseFontName]][baseFontSize - 7]
       allCharWidths <- rep(baseFontCharWidth, length(sheetData[[sheet]]))
       #########----------------------------------------------------------------
       
@@ -1360,9 +1360,9 @@ Workbook$methods(setColWidths = function(sheet){
           }
           
           if("BOLD" %in% thisStyle$fontDecoration){
-            styleMaxCharWidth <- openxlsxFontSizeLookupTableBold[[fN]][fS - 8]
+            styleMaxCharWidth <- openxlsxFontSizeLookupTableBold[[fN]][fS - 7]
           }else{
-            styleMaxCharWidth <- openxlsxFontSizeLookupTable[[fN]][fS - 8]
+            styleMaxCharWidth <- openxlsxFontSizeLookupTable[[fN]][fS - 7]
           }
           
           styleMaxCharWidth
